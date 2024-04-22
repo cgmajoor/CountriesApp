@@ -29,10 +29,15 @@ class CountriesViewController: UIViewController {
         return errorView
     }()
 
-    private var viewModel: CountriesViewModel
+    private var viewModel: CountriesViewModelProtocol
+    private var router: CountriesRouting
 
-    init(viewModel: CountriesViewModel = CountriesViewModel()) {
+    init(
+        viewModel: CountriesViewModelProtocol = CountriesViewModel(),
+        router: CountriesRouting = CountriesRouter()
+    ) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -66,7 +71,8 @@ extension CountriesViewController: UITableViewDataSource {
 
 extension CountriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("SELECTED: \(viewModel.countries[indexPath.row])")
+        let selectedCountryName = viewModel.countries[indexPath.row].name
+        router.didSelectCountry(in: self, countryName: selectedCountryName)
     }
 }
 
@@ -80,6 +86,7 @@ private extension CountriesViewController {
     }
 
     func configureProperties() {
+        title = "Countries"
         view.backgroundColor = .systemBackground
 
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: CountryTableViewCell.identifier)
@@ -116,6 +123,7 @@ private extension CountriesViewController {
             case .error:
                 errorView.isHidden = false
             case .success:
+                navigationController?.setNavigationBarHidden(false, animated: true)
                 tableView.isHidden = false
                 self.tableView.reloadData()
             }
@@ -123,6 +131,7 @@ private extension CountriesViewController {
     }
 
     func hideAllViews() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         loadingAnimationView.isHidden = true
         errorView.isHidden = true
         tableView.isHidden = true

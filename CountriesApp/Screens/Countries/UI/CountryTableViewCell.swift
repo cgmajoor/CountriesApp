@@ -69,4 +69,3 @@ private extension CountryTableViewCell {
         titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: flagImageView)
     }
 }
-

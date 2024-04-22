@@ -8,5 +8,8 @@
 import Foundation
 
 protocol CountriesViewModelProtocol {
-    func loadCountries() 
+    var onStateChanged: ((State) -> ())? { get set }
+    var countries: [Country] { get }
+
+    func loadCountries()
 }
