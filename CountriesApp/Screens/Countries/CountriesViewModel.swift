@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CountriesViewModel {
+class CountriesViewModel: CountriesViewModelProtocol {
 
     var countries: [Country] = []
 
