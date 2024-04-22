@@ -26,6 +26,9 @@
 		F2CFF3912BD692BA00D34AAB /* CountriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3902BD692BA00D34AAB /* CountriesViewModelProtocol.swift */; };
 		F2CFF3932BD692E900D34AAB /* CountriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3922BD692E900D34AAB /* CountriesViewModelTests.swift */; };
 		F2CFF3962BD6933E00D34AAB /* MockGetAllCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3952BD6933E00D34AAB /* MockGetAllCountries.swift */; };
+		F2CFF3992BD69A2000D34AAB /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3982BD69A2000D34AAB /* CountryTableViewCell.swift */; };
+		F2CFF39C2BD69C8F00D34AAB /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = F2CFF39B2BD69C8F00D34AAB /* PureLayout */; };
+		F2CFF3A12BD6AAA300D34AAB /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3A02BD6AAA300D34AAB /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,8 @@
 		F2CFF3902BD692BA00D34AAB /* CountriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelProtocol.swift; sourceTree = "<group>"; };
 		F2CFF3922BD692E900D34AAB /* CountriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelTests.swift; sourceTree = "<group>"; };
 		F2CFF3952BD6933E00D34AAB /* MockGetAllCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetAllCountries.swift; sourceTree = "<group>"; };
+		F2CFF3982BD69A2000D34AAB /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		F2CFF3A02BD6AAA300D34AAB /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CFF39C2BD69C8F00D34AAB /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				F2CFF36C2BD680AF00D34AAB /* CountriesViewController.swift */,
-				F2CFF36E2BD681F600D34AAB /* CountriesViewModel.swift */,
-				F2CFF3902BD692BA00D34AAB /* CountriesViewModelProtocol.swift */,
+				F2CFF3982BD69A2000D34AAB /* CountryTableViewCell.swift */,
+				F2CFF3972BD699C400D34AAB /* Presentation */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -221,6 +227,16 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		F2CFF3972BD699C400D34AAB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3902BD692BA00D34AAB /* CountriesViewModelProtocol.swift */,
+				F2CFF36E2BD681F600D34AAB /* CountriesViewModel.swift */,
+				F2CFF3A02BD6AAA300D34AAB /* State.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +253,9 @@
 			dependencies = (
 			);
 			name = CountriesApp;
+			packageProductDependencies = (
+				F2CFF39B2BD69C8F00D34AAB /* PureLayout */,
+			);
 			productName = CountriesApp;
 			productReference = F2CFF3382BD661B200D34AAB /* CountriesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +306,9 @@
 				Base,
 			);
 			mainGroup = F2CFF32F2BD661B200D34AAB;
+			packageReferences = (
+				F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */,
+			);
 			productRefGroup = F2CFF3392BD661B200D34AAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,10 +351,12 @@
 				F2CFF33C2BD661B200D34AAB /* AppDelegate.swift in Sources */,
 				F2CFF3912BD692BA00D34AAB /* CountriesViewModelProtocol.swift in Sources */,
 				F2CFF36F2BD681F600D34AAB /* CountriesViewModel.swift in Sources */,
+				F2CFF3A12BD6AAA300D34AAB /* State.swift in Sources */,
 				F2CFF35C2BD67A2C00D34AAB /* WebserviceError.swift in Sources */,
 				F2CFF3572BD679F700D34AAB /* CountryNameResponse.swift in Sources */,
 				F2CFF3552BD679E400D34AAB /* FlagsResponse.swift in Sources */,
 				F2CFF35A2BD67A0F00D34AAB /* CountriesWebservice.swift in Sources */,
+				F2CFF3992BD69A2000D34AAB /* CountryTableViewCell.swift in Sources */,
 				F2CFF37B2BD6861900D34AAB /* GetAllCountries.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PureLayout/PureLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2CFF39B2BD69C8F00D34AAB /* PureLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */;
+			productName = PureLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2CFF3302BD661B200D34AAB /* Project object */;
 }

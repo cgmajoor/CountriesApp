@@ -9,6 +9,7 @@ import Foundation
 
 class CountriesViewModel: CountriesViewModelProtocol {
 
+    var onStateChanged: ((State) -> ())?
     var countries: [Country] = []
 
     private let getAllCountries: GetAllCountriesProtocol
@@ -18,14 +19,17 @@ class CountriesViewModel: CountriesViewModelProtocol {
     }
 
     func loadCountries() {
+        self.onStateChanged?(.loading)
         Task {
             do {
                 self.countries = try await getAllCountries.execute()
-                DispatchQueue.main.async {
-                    print(self.countries)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+
+                    self.onStateChanged?(.success)
                 }
             } catch let err as WebserviceError {
-                print(err.rawValue)
+                self.onStateChanged?(.error(err))
             }
         }
     }
