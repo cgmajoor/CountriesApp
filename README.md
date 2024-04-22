@@ -15,6 +15,7 @@ git clone https://github.com/cgmajoor/CountriesApp.git
 In Xcode -> File -> Packages -> Resolve Package Versions
 
 **Screen captures**
+
 ![Goodflow-ezgif com-video-to-gif-converter](https://github.com/cgmajoor/CountriesApp/assets/10939149/0e8e0125-8677-419b-8e2b-f80e002ead76)
 ![Errorfetching-ezgif com-video-to-gif-converter](https://github.com/cgmajoor/CountriesApp/assets/10939149/b286168a-dd0e-4d84-9a49-19a704ff7a06)
 
