@@ -5,7 +5,6 @@
 //  Created by Ceren Majoor on 22/04/2024.
 //
 
-import Foundation
 import UIKit
 
 protocol CountriesRouting {
@@ -14,8 +13,8 @@ protocol CountriesRouting {
 
 class CountriesRouter: CountriesRouting {
     func didSelectCountry(in viewController: CountriesViewController, countryName: String) {
-        let dummyViewController = UIViewController()
-        dummyViewController.view.backgroundColor = UIColor.red
-        viewController.navigationController?.pushViewController(dummyViewController, animated: true)
+        let viewModel = CountryDetailViewModel(name: countryName)
+        let countryDetailViewController = CountryDetailViewController(viewModel: viewModel)
+        viewController.navigationController?.pushViewController(countryDetailViewController, animated: true)
     }
 }
