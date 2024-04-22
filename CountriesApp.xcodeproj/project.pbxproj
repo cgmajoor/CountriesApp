@@ -29,6 +29,10 @@
 		F2CFF3992BD69A2000D34AAB /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3982BD69A2000D34AAB /* CountryTableViewCell.swift */; };
 		F2CFF39C2BD69C8F00D34AAB /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = F2CFF39B2BD69C8F00D34AAB /* PureLayout */; };
 		F2CFF3A12BD6AAA300D34AAB /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3A02BD6AAA300D34AAB /* State.swift */; };
+		F2CFF3A42BD6AD5800D34AAB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F2CFF3A32BD6AD5800D34AAB /* Lottie */; };
+		F2CFF3A62BD6ADBD00D34AAB /* loadingWorldAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CFF3A52BD6ADBD00D34AAB /* loadingWorldAnimation.json */; };
+		F2CFF3AC2BD6B33C00D34AAB /* CAErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3AB2BD6B33C00D34AAB /* CAErrorView.swift */; };
+		F2CFF3AE2BD6B84B00D34AAB /* errorWorldAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = F2CFF3AD2BD6B84B00D34AAB /* errorWorldAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,9 @@
 		F2CFF3952BD6933E00D34AAB /* MockGetAllCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetAllCountries.swift; sourceTree = "<group>"; };
 		F2CFF3982BD69A2000D34AAB /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		F2CFF3A02BD6AAA300D34AAB /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F2CFF3A52BD6ADBD00D34AAB /* loadingWorldAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingWorldAnimation.json; sourceTree = "<group>"; };
+		F2CFF3AB2BD6B33C00D34AAB /* CAErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAErrorView.swift; sourceTree = "<group>"; };
+		F2CFF3AD2BD6B84B00D34AAB /* errorWorldAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = errorWorldAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2CFF39C2BD69C8F00D34AAB /* PureLayout in Frameworks */,
+				F2CFF3A42BD6AD5800D34AAB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,10 +116,13 @@
 		F2CFF33A2BD661B200D34AAB /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F2CFF3A72BD6B2AF00D34AAB /* Common */,
 				F2CFF3702BD682DD00D34AAB /* Domain */,
 				F2CFF36A2BD6804D00D34AAB /* Screens */,
 				F2CFF34F2BD6680900D34AAB /* Data */,
 				F2CFF33B2BD661B200D34AAB /* AppDelegate.swift */,
+				F2CFF3AD2BD6B84B00D34AAB /* errorWorldAnimation.json */,
+				F2CFF3A52BD6ADBD00D34AAB /* loadingWorldAnimation.json */,
 				F2CFF3442BD661B200D34AAB /* Assets.xcassets */,
 				F2CFF3462BD661B200D34AAB /* LaunchScreen.storyboard */,
 				F2CFF3492BD661B200D34AAB /* Info.plist */,
@@ -237,6 +248,22 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		F2CFF3A72BD6B2AF00D34AAB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3A82BD6B2BC00D34AAB /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F2CFF3A82BD6B2BC00D34AAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3AB2BD6B33C00D34AAB /* CAErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +282,7 @@
 			name = CountriesApp;
 			packageProductDependencies = (
 				F2CFF39B2BD69C8F00D34AAB /* PureLayout */,
+				F2CFF3A32BD6AD5800D34AAB /* Lottie */,
 			);
 			productName = CountriesApp;
 			productReference = F2CFF3382BD661B200D34AAB /* CountriesApp.app */;
@@ -308,6 +336,7 @@
 			mainGroup = F2CFF32F2BD661B200D34AAB;
 			packageReferences = (
 				F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */,
+				F2CFF3A22BD6AD5800D34AAB /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F2CFF3392BD661B200D34AAB /* Products */;
 			projectDirPath = "";
@@ -325,6 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2CFF3452BD661B200D34AAB /* Assets.xcassets in Resources */,
+				F2CFF3A62BD6ADBD00D34AAB /* loadingWorldAnimation.json in Resources */,
+				F2CFF3AE2BD6B84B00D34AAB /* errorWorldAnimation.json in Resources */,
 				F2CFF3482BD661B200D34AAB /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +379,7 @@
 				F2CFF3732BD6830C00D34AAB /* Country.swift in Sources */,
 				F2CFF37F2BD687DD00D34AAB /* CountriesWebserviceProtocol.swift in Sources */,
 				F2CFF3532BD679CD00D34AAB /* CountryResponse.swift in Sources */,
+				F2CFF3AC2BD6B33C00D34AAB /* CAErrorView.swift in Sources */,
 				F2CFF33C2BD661B200D34AAB /* AppDelegate.swift in Sources */,
 				F2CFF3912BD692BA00D34AAB /* CountriesViewModelProtocol.swift in Sources */,
 				F2CFF36F2BD681F600D34AAB /* CountriesViewModel.swift in Sources */,
@@ -640,6 +672,14 @@
 				minimumVersion = 3.1.9;
 			};
 		};
+		F2CFF3A22BD6AD5800D34AAB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */;
 			productName = PureLayout;
+		};
+		F2CFF3A32BD6AD5800D34AAB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2CFF3A22BD6AD5800D34AAB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

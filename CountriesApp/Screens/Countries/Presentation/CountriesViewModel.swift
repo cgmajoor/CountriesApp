@@ -19,17 +19,20 @@ class CountriesViewModel: CountriesViewModelProtocol {
     }
 
     func loadCountries() {
-        self.onStateChanged?(.loading)
+        DispatchQueue.main.async { [weak self] in
+            self?.onStateChanged?(.loading)
+        }
+
         Task {
             do {
                 self.countries = try await getAllCountries.execute()
                 DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-
-                    self.onStateChanged?(.success)
+                    self?.onStateChanged?(.success)
                 }
             } catch let err as WebserviceError {
-                self.onStateChanged?(.error(err))
+                DispatchQueue.main.async { [weak self] in
+                    self?.onStateChanged?(.error(err))
+                }
             }
         }
     }
