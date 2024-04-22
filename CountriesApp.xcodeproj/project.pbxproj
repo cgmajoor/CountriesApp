@@ -11,7 +11,22 @@
 		F2CFF3402BD661B200D34AAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF33F2BD661B200D34AAB /* ViewController.swift */; };
 		F2CFF3452BD661B200D34AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CFF3442BD661B200D34AAB /* Assets.xcassets */; };
 		F2CFF3482BD661B200D34AAB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F2CFF3472BD661B200D34AAB /* Base */; };
+		F2CFF3532BD679CD00D34AAB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3522BD679CD00D34AAB /* Country.swift */; };
+		F2CFF3552BD679E400D34AAB /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3542BD679E400D34AAB /* Flags.swift */; };
+		F2CFF3572BD679F700D34AAB /* CountryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3562BD679F700D34AAB /* CountryName.swift */; };
+		F2CFF35A2BD67A0F00D34AAB /* CountriesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3592BD67A0F00D34AAB /* CountriesWebservice.swift */; };
+		F2CFF35C2BD67A2C00D34AAB /* WebserviceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF35B2BD67A2C00D34AAB /* WebserviceError.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2CFF3652BD67D2A00D34AAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2CFF3302BD661B200D34AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2CFF3372BD661B200D34AAB;
+			remoteInfo = CountriesApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F2CFF3382BD661B200D34AAB /* CountriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +35,23 @@
 		F2CFF3442BD661B200D34AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2CFF3472BD661B200D34AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2CFF3492BD661B200D34AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CFF3522BD679CD00D34AAB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		F2CFF3542BD679E400D34AAB /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		F2CFF3562BD679F700D34AAB /* CountryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryName.swift; sourceTree = "<group>"; };
+		F2CFF3592BD67A0F00D34AAB /* CountriesWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWebservice.swift; sourceTree = "<group>"; };
+		F2CFF35B2BD67A2C00D34AAB /* WebserviceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceError.swift; sourceTree = "<group>"; };
+		F2CFF3612BD67D2A00D34AAB /* CountriesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F2CFF3352BD661B200D34AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CFF35E2BD67D2A00D34AAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				F2CFF3382BD661B200D34AAB /* CountriesApp.app */,
+				F2CFF3612BD67D2A00D34AAB /* CountriesAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +81,7 @@
 		F2CFF33A2BD661B200D34AAB /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F2CFF34F2BD6680900D34AAB /* Data */,
 				F2CFF33B2BD661B200D34AAB /* AppDelegate.swift */,
 				F2CFF33F2BD661B200D34AAB /* ViewController.swift */,
 				F2CFF3442BD661B200D34AAB /* Assets.xcassets */,
@@ -59,6 +89,42 @@
 				F2CFF3492BD661B200D34AAB /* Info.plist */,
 			);
 			path = CountriesApp;
+			sourceTree = "<group>";
+		};
+		F2CFF34F2BD6680900D34AAB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3502BD6682200D34AAB /* Countries */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F2CFF3502BD6682200D34AAB /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3582BD679FF00D34AAB /* Webservice */,
+				F2CFF3512BD6799900D34AAB /* Data Models */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		F2CFF3512BD6799900D34AAB /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3522BD679CD00D34AAB /* Country.swift */,
+				F2CFF3542BD679E400D34AAB /* Flags.swift */,
+				F2CFF3562BD679F700D34AAB /* CountryName.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		F2CFF3582BD679FF00D34AAB /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				F2CFF3592BD67A0F00D34AAB /* CountriesWebservice.swift */,
+				F2CFF35B2BD67A2C00D34AAB /* WebserviceError.swift */,
+			);
+			path = Webservice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +147,24 @@
 			productReference = F2CFF3382BD661B200D34AAB /* CountriesApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F2CFF3602BD67D2A00D34AAB /* CountriesAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2CFF3672BD67D2A00D34AAB /* Build configuration list for PBXNativeTarget "CountriesAppTests" */;
+			buildPhases = (
+				F2CFF35D2BD67D2A00D34AAB /* Sources */,
+				F2CFF35E2BD67D2A00D34AAB /* Frameworks */,
+				F2CFF35F2BD67D2A00D34AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2CFF3662BD67D2A00D34AAB /* PBXTargetDependency */,
+			);
+			name = CountriesAppTests;
+			productName = CountriesAppTests;
+			productReference = F2CFF3612BD67D2A00D34AAB /* CountriesAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +177,10 @@
 				TargetAttributes = {
 					F2CFF3372BD661B200D34AAB = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					F2CFF3602BD67D2A00D34AAB = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = F2CFF3372BD661B200D34AAB;
 					};
 				};
 			};
@@ -110,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				F2CFF3372BD661B200D34AAB /* CountriesApp */,
+				F2CFF3602BD67D2A00D34AAB /* CountriesAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +213,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2CFF35F2BD67D2A00D34AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -132,11 +228,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2CFF3402BD661B200D34AAB /* ViewController.swift in Sources */,
+				F2CFF3532BD679CD00D34AAB /* Country.swift in Sources */,
 				F2CFF33C2BD661B200D34AAB /* AppDelegate.swift in Sources */,
+				F2CFF35C2BD67A2C00D34AAB /* WebserviceError.swift in Sources */,
+				F2CFF3572BD679F700D34AAB /* CountryName.swift in Sources */,
+				F2CFF3552BD679E400D34AAB /* Flags.swift in Sources */,
+				F2CFF35A2BD67A0F00D34AAB /* CountriesWebservice.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CFF35D2BD67D2A00D34AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2CFF3662BD67D2A00D34AAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2CFF3372BD661B200D34AAB /* CountriesApp */;
+			targetProxy = F2CFF3652BD67D2A00D34AAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F2CFF3462BD661B200D34AAB /* LaunchScreen.storyboard */ = {
@@ -321,6 +437,40 @@
 			};
 			name = Release;
 		};
+		F2CFF3682BD67D2A00D34AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucium.CountriesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountriesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountriesApp";
+			};
+			name = Debug;
+		};
+		F2CFF3692BD67D2A00D34AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucium.CountriesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountriesApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountriesApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +488,15 @@
 			buildConfigurations = (
 				F2CFF34D2BD661B200D34AAB /* Debug */,
 				F2CFF34E2BD661B200D34AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2CFF3672BD67D2A00D34AAB /* Build configuration list for PBXNativeTarget "CountriesAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CFF3682BD67D2A00D34AAB /* Debug */,
+				F2CFF3692BD67D2A00D34AAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
