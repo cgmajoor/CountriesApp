@@ -7,10 +7,10 @@
 
 import Foundation
 
-class CountriesWebservice {
+class CountriesWebservice: CountriesWebserviceProtocol {
     let urlString = "https://restcountries.com/v3.1/all?fields=flags,name,capital,region"
     
-    func fetchCountries() async throws -> [Country] {
+    func fetchCountries() async throws -> [CountryResponse] {
         guard let url = URL(string: urlString) else {
             print("Bad URL")
             throw WebserviceError.badURL
@@ -25,7 +25,7 @@ class CountriesWebservice {
         }
         
         do {
-            return try await JSONDecoder().decode([Country].self, from: data)
+            return try await JSONDecoder().decode([CountryResponse].self, from: data)
         } catch {
             throw WebserviceError.badJSON
         }
