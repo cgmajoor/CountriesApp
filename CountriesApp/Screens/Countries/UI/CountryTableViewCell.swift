@@ -7,6 +7,7 @@
 
 import UIKit
 import PureLayout
+import Kingfisher
 
 class CountryTableViewCell: UITableViewCell {
 
@@ -43,7 +44,9 @@ class CountryTableViewCell: UITableViewCell {
 
     func configure(with country: Country) {
         titleLabel.text = country.name
-        flagImageView.image = UIImage.init(systemName: "house")
+        
+        let imageURL = URL(string: country.flagImageURL)
+        flagImageView.kf.setImage(with: imageURL)
     }
 
     private func configure() {

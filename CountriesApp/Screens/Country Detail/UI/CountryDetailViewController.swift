@@ -10,6 +10,22 @@ import Lottie
 
 class CountryDetailViewController: UIViewController {
 
+    let verticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+
+    let flagImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+
     private var viewModel: CountryDetailViewModelProtocol
 
     init(viewModel: CountryDetailViewModelProtocol) {
@@ -38,15 +54,15 @@ private extension CountryDetailViewController {
     }
 
     func configureProperties() {
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
     }
 
     func configureHierarchy() {
-        // TODO: add views
+        view.addSubview(verticalStackView)
     }
 
     func configureLayout() {
-        // TODO: layout views
+        verticalStackView.autoPinEdges(toSuperviewMarginsExcludingEdge: .bottom)
     }
 
     func configureEvents() {
@@ -60,8 +76,38 @@ private extension CountryDetailViewController {
                 print("error")
             case .success:
                 print("success")
+
+                guard let country = viewModel.country else { return }
+                renderStackView(with: country)
             }
         }
+    }
+
+    func renderStackView(with country: CountryItem) {
+        verticalStackView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+
+        let imageURL = URL(string: country.flagImageURL)
+        flagImageView.kf.setImage(with: imageURL)
+        verticalStackView.addArrangedSubview(flagImageView)
+
+        let nameView = KeyValueView()
+        nameView.configure(keyName: "Name", valueName: country.name)
+        verticalStackView.addArrangedSubview(nameView)
+
+        let capitalView = KeyValueView()
+        capitalView.configure(keyName: "Capital", valueName: country.capital)
+        verticalStackView.addArrangedSubview(capitalView)
+
+        let regionView = KeyValueView()
+        regionView.configure(keyName: "Region", valueName: country.region)
+        verticalStackView.addArrangedSubview(regionView)
+
+
+        let populationView = KeyValueView()
+        populationView.configure(keyName: "Population", valueName: country.population)
+        verticalStackView.addArrangedSubview(populationView)
     }
 }
 

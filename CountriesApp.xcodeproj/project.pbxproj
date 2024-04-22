@@ -43,6 +43,8 @@
 		F2CFF3EC2BD6CE4500D34AAB /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3EB2BD6CE4500D34AAB /* CountryDetailViewModel.swift */; };
 		F2CFF3EE2BD6CE4F00D34AAB /* CountryDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3ED2BD6CE4F00D34AAB /* CountryDetailViewModelProtocol.swift */; };
 		F2CFF3F02BD6CE8700D34AAB /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3EF2BD6CE8700D34AAB /* CountryDetailViewController.swift */; };
+		F2CFF3F32BD6D2CC00D34AAB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F2CFF3F22BD6D2CC00D34AAB /* Kingfisher */; };
+		F2CFF3F52BD6D53C00D34AAB /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFF3F42BD6D53C00D34AAB /* KeyValueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,7 @@
 		F2CFF3EB2BD6CE4500D34AAB /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		F2CFF3ED2BD6CE4F00D34AAB /* CountryDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		F2CFF3EF2BD6CE8700D34AAB /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
+		F2CFF3F42BD6D53C00D34AAB /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CFF3F32BD6D2CC00D34AAB /* Kingfisher in Frameworks */,
 				F2CFF39C2BD69C8F00D34AAB /* PureLayout in Frameworks */,
 				F2CFF3A42BD6AD5800D34AAB /* Lottie in Frameworks */,
 			);
@@ -153,8 +157,8 @@
 		F2CFF34F2BD6680900D34AAB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F2CFF3D52BD6CC3F00D34AAB /* Country Detail */,
 				F2CFF3D12BD6C8B700D34AAB /* Common */,
+				F2CFF3D52BD6CC3F00D34AAB /* Country Detail */,
 				F2CFF3502BD6682200D34AAB /* Countries */,
 			);
 			path = Data;
@@ -282,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				F2CFF3AB2BD6B33C00D34AAB /* CAErrorView.swift */,
+				F2CFF3F42BD6D53C00D34AAB /* KeyValueView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			packageProductDependencies = (
 				F2CFF39B2BD69C8F00D34AAB /* PureLayout */,
 				F2CFF3A32BD6AD5800D34AAB /* Lottie */,
+				F2CFF3F22BD6D2CC00D34AAB /* Kingfisher */,
 			);
 			productName = CountriesApp;
 			productReference = F2CFF3382BD661B200D34AAB /* CountriesApp.app */;
@@ -471,6 +477,7 @@
 			packageReferences = (
 				F2CFF39A2BD69C8F00D34AAB /* XCRemoteSwiftPackageReference "PureLayout" */,
 				F2CFF3A22BD6AD5800D34AAB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F2CFF3F12BD6D2CC00D34AAB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F2CFF3392BD661B200D34AAB /* Products */;
 			projectDirPath = "";
@@ -534,6 +541,7 @@
 				F2CFF3E12BD6CD3800D34AAB /* GetCountryProtocol.swift in Sources */,
 				F2CFF3D92BD6CCAE00D34AAB /* GetCountryResponse.swift in Sources */,
 				F2CFF37B2BD6861900D34AAB /* GetAllCountries.swift in Sources */,
+				F2CFF3F52BD6D53C00D34AAB /* KeyValueView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +832,14 @@
 				minimumVersion = 4.4.3;
 			};
 		};
+		F2CFF3F12BD6D2CC00D34AAB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -836,6 +852,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2CFF3A22BD6AD5800D34AAB /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		F2CFF3F22BD6D2CC00D34AAB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2CFF3F12BD6D2CC00D34AAB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
