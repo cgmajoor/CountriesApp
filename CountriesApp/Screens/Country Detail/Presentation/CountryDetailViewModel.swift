@@ -29,7 +29,9 @@ class CountryDetailViewModel: CountryDetailViewModelProtocol {
             self?.onStateChanged?(.loading)
         }
 
-        Task {
+        Task { [weak self] in
+            guard let self else { return }
+
             do {
                 self.country = try await getCountry.execute(name: name)
                 DispatchQueue.main.async { [weak self] in

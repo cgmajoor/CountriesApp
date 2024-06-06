@@ -13,9 +13,13 @@ class CountriesViewModel: CountriesViewModelProtocol {
     var countries: [Country] = []
 
     private let getAllCountries: GetAllCountriesProtocol
+    private let sortCountriesAlphabetically: SortCountriesAlphabetically
 
-    init(getAllCountries: GetAllCountriesProtocol = GetAllCountries()) {
+    init(
+        getAllCountries: GetAllCountriesProtocol = GetAllCountries(),
+        sortCountriesAlphabetically: SortCountriesAlphabetically = SortCountriesAlphabetically()) {
         self.getAllCountries = getAllCountries
+        self.sortCountriesAlphabetically = sortCountriesAlphabetically
     }
 
     func loadCountries() {
@@ -23,9 +27,12 @@ class CountriesViewModel: CountriesViewModelProtocol {
             self?.onStateChanged?(.loading)
         }
 
-        Task {
+        Task { [weak self] in
+            guard let self else { return }
+
             do {
                 self.countries = try await getAllCountries.execute()
+                self.countries = sortCountriesAlphabetically.execute(countries: self.countries)
                 DispatchQueue.main.async { [weak self] in
                     self?.onStateChanged?(.success)
                 }

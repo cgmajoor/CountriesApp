@@ -19,7 +19,7 @@ class CountriesWebservice: CountriesWebserviceProtocol {
         async let (data, response) = try await URLSession.shared.data(from: url)
         
         // TODO: Remove this, just used to show loading
-        // sleep(3)
+        sleep(3)
 
         guard
             let resp = try await response as? HTTPURLResponse,
